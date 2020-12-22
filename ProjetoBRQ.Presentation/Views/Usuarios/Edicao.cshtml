@@ -1,0 +1,106 @@
+﻿@model ProjetoBRQ.Application.Models.UsuariosEdicaoModel
+
+@{
+    ViewData["Title"] = "Edicao";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h5>Edição de Usuários</h5>
+<p>Modifique os dados abaixo:</p>
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-md-4">
+
+            <!-- campo oculto -->
+            @Html.HiddenFor(model => model.IdUsuario)
+
+            <label>Nome</label> @Html.TextBoxFor(model => model.NomeUsuario, new { @class = "form-control", @placeholder = "Digite aqui" })
+            <span class="text-danger">
+                @Html.ValidationMessageFor(model => model.NomeUsuario)
+            </span>
+            <br />
+
+            <label>Sobrenome</label>
+            @Html.TextBoxFor(model => model.SobrenomeUsuario,
+                new { @class = "form-control", @placeholder = "Digite aqui" })
+            <span class="text-danger">
+                @Html.ValidationMessageFor(model => model.SobrenomeUsuario)
+            </span>
+            <br />
+
+            <label>CPF</label>
+            @Html.TextBoxFor(model => model.CpfUsuario,
+                new
+                {
+                    @class = "form-control",
+                    @placeholder = "Digite aqui"
+                })
+            <span class="text-danger">
+                <small>@Html.ValidationMessageFor(model => model.CpfUsuario)</small>
+            </span>
+            <br />
+
+            <label>Data de Nascimento</label>
+            @Html.TextBoxFor(model => model.DataNascimentoUsuario,
+                new { @class = "form-control" })
+            <span class="text-danger">
+                @Html.ValidationMessageFor(model => model.DataNascimentoUsuario)
+            </span>
+            <br />
+        </div>
+        <div class="col-md-4">
+            <label>CEP</label>
+            @Html.TextBoxFor(model => model.CepUsuario,
+                new { @class = "form-control", @placeholder = "Digite aqui" })
+            <span class="text-danger">
+                @Html.ValidationMessageFor(model => model.CepUsuario)
+            </span>
+            <br />
+
+            <label>Endereço</label>
+            @Html.TextBoxFor(model => model.EnderecoUsuario,
+                new { @class = "form-control", @placeholder = "Digite aqui" })
+            <span class="text-danger">
+                @Html.ValidationMessageFor(model => model.EnderecoUsuario)
+            </span>
+            <br />
+
+            <label>Número</label>
+            @Html.TextBoxFor(model => model.NumeroUsuario,
+                new { @class = "form-control", @placeholder = "Digite aqui" })
+            <span class="text-danger">
+                @Html.ValidationMessageFor(model => model.NumeroUsuario)
+            </span>
+            <br />
+
+            <label>Complemento</label>
+            @Html.TextBoxFor(model => model.ComplementoUsuario,
+                new { @class = "form-control", @placeholder = "Digite aqui" })
+            <span class="text-danger">
+                @Html.ValidationMessageFor(model => model.ComplementoUsuario)
+            </span>
+        </div>
+        <div class="col-md-4">
+            <label>Cidade</label>
+            @Html.TextBoxFor(model => model.CidadeUsuario,
+                new { @class = "form-control", @placeholder = "Digite aqui" })
+            <span class="text-danger">
+                @Html.ValidationMessageFor(model => model.CidadeUsuario)
+            </span>
+            <br />
+
+            <label>Estado</label>
+            @Html.TextBoxFor(model => model.EstadoUsuario,
+                new { @class = "form-control", @placeholder = "Digite aqui" })
+            <span class="text-danger">
+                @Html.ValidationMessageFor(model => model.EstadoUsuario)
+            </span>
+        </div>
+    </div>
+
+    <input type="submit" value="Atualizar Dados"
+           class="btn btn-primary" />
+
+}
